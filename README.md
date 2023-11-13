@@ -5,3 +5,4 @@ Css
 apis
 javascript 
 its a weather-appp designed where upon changing on the weather condition the themes will be changing and also the few other parameters like humidity wind based on the weather at the searched city .
+In this you will be seeing how i changed the themes based upon the weather parameters 
