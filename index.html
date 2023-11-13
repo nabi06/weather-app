@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weather-app</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="search">
+            <input type="text" placeholder="enter city " class="city">
+            <button><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+              </svg></button>
+
+        </div>
+        <div class="weather">
+            <div class="photos">
+                <img src="./cloudy.png">
+                <h2 class="temp">22°C</h2>
+                <h2 class="city2"> Banglore </h2>
+            </div>
+            <div class="type">
+                <div class="humidty">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-water" viewBox="0 0 16 16">
+                        <path d="M.036 3.314a.5.5 0 0 1 .65-.278l1.757.703a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.757-.703a.5.5 0 1 1 .372.928l-1.758.703a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0L.314 3.964a.5.5 0 0 1-.278-.65zm0 3a.5.5 0 0 1 .65-.278l1.757.703a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.757-.703a.5.5 0 1 1 .372.928l-1.758.703a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0L.314 6.964a.5.5 0 0 1-.278-.65zm0 3a.5.5 0 0 1 .65-.278l1.757.703a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.757-.703a.5.5 0 1 1 .372.928l-1.758.703a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0L.314 9.964a.5.5 0 0 1-.278-.65zm0 3a.5.5 0 0 1 .65-.278l1.757.703a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.757-.703a.5.5 0 1 1 .372.928l-1.758.703a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0l-1.757-.703a.5.5 0 0 1-.278-.65z"/>
+                    </svg><span class="humidity">90% <h3>humidty</h3> </span>
+                </div>
+                <div class="windy">
+                    <img src="./windy.png" alt=""><span class="windyy">6.24km/h<h3>Windy</h3></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const apiKey = "59e328b7508bd8b11184b96b94b63659";
+        const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+        const searchBox = document.querySelector(".city");
+        const searchbtn = document.querySelector(" .search button");
+        async function checkWeather(city) {
+        const response = await fetch(apiUrl +  city + `&appid=${apiKey}`);
+        var data = await response.json();
+        console.log(data);
+        document.querySelector(".city2").innerHTML = data.name;
+        document.querySelector(".temp").innerHTML = data.main.temp + '°C';
+        document.querySelector(".humidity").innerHTML = data.main.humidity + '%';            
+        document.querySelector(".windyy").innerHTML = data.wind.speed + 'km/h';
+        if (data.weather[0].main =="Clouds"){
+                document.querySelector(".photos img").src="./cloudy.png"
+                document.querySelector(".container").style.background= "linear-gradient(rgb(98, 98, 250),rgb(16, 16, 219))";
+            }else if (data.weather[0].main =="Clear"){
+                document.querySelector(".photos img").src="./clear.png"
+                document.querySelector(".container").style.background= "linear-gradient(rgb(247, 179, 6) ,rgb(255, 140, 0))";
+            }else if (data.weather[0].main =="Rain"){
+                document.querySelector(".photos img").src="./rainy.png"
+                document.querySelector(".container").style.background= "linear-gradient(rgb(15, 15, 15),rgb(99, 23, 146))";
+            }else if (data.weather[0].main =="Drizzle"){
+                document.querySelector(".photos img").src="./drizzle.png"
+            }else if (data.weather[0].main =="Mist"){
+                document.querySelector(".photos img").src="./mist.png"
+                document.querySelector(".container").style.background= "linear-gradient(rgb(32, 222, 130),rgb(7, 91, 217))";
+            }   
+            document.querySelector(".weather").style.display="block"; 
+        }
+        
+        
+        searchbtn.addEventListener("click",function(){
+            checkWeather(searchBox.value);
+        })
+        
+        
+
+    </script>
+    
+</body>
+</html>
